@@ -19,6 +19,10 @@ class EntryListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,9 +46,33 @@ class EntryListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("entryCell", forIndexPath: indexPath)
-
         
-
+        let entry = EntryController.sharedinstance.entries[indexPath.row]
+        cell.textLabel?.text = entry.title
+        
+//       // let formatter = NSDateFormatter(coder: entry.timeStamp)
+//        formatter!.dateStyle = .ShortStyle
+//        formatter!.timeStyle = .ShortStyle
+//        cell.detailTextLabel?.text = formatter
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            EntryController.sharedinstance.entries.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "viewEntrySegue" {
+            let entryDetailViewController = segue.destinationViewController as! EntryDetailViewController
+            
+            if let cell = sender as? UITableViewCell,
+                indexPath = tableView.indexPathForCell(cell) {
+                    let entry = EntryController.sharedinstance.entries[indexPath.row]
+                        entryDetailViewController.entry = entry
+            }
+        }
     }
 }

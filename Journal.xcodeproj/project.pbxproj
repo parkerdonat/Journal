@@ -13,6 +13,7 @@
 		68816AD21BBB5405000569CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68816AD01BBB5405000569CE /* LaunchScreen.storyboard */; };
 		68816ADD1BBB5406000569CE /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68816ADC1BBB5406000569CE /* JournalTests.swift */; };
 		68816AE81BBB5406000569CE /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68816AE71BBB5406000569CE /* JournalUITests.swift */; };
+		C33EE8FA1C64193F001ABA89 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33EE8F91C64193F001ABA89 /* EntryDetailViewController.swift */; };
 		C43638C01C64034D00DF0E4B /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43638BF1C64034D00DF0E4B /* Entry.swift */; };
 		C43638C21C64043D00DF0E4B /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43638C11C64043D00DF0E4B /* EntryController.swift */; };
 		C43638C41C64118700DF0E4B /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43638C31C64118700DF0E4B /* EntryListTableViewController.swift */; };
@@ -48,6 +49,7 @@
 		68816AE31BBB5406000569CE /* JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68816AE71BBB5406000569CE /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		68816AE91BBB5406000569CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33EE8F91C64193F001ABA89 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		C43638BF1C64034D00DF0E4B /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		C43638C11C64043D00DF0E4B /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		C43638C31C64118700DF0E4B /* EntryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				68816AC71BBB5405000569CE /* AppDelegate.swift */,
 				68816ACB1BBB5405000569CE /* Main.storyboard */,
+				C33EE8F91C64193F001ABA89 /* EntryDetailViewController.swift */,
 				C43638C31C64118700DF0E4B /* EntryListTableViewController.swift */,
 				C43638BF1C64034D00DF0E4B /* Entry.swift */,
 				C43638C11C64043D00DF0E4B /* EntryController.swift */,
@@ -264,6 +267,7 @@
 				C43638C41C64118700DF0E4B /* EntryListTableViewController.swift in Sources */,
 				C43638C21C64043D00DF0E4B /* EntryController.swift in Sources */,
 				68816AC81BBB5405000569CE /* AppDelegate.swift in Sources */,
+				C33EE8FA1C64193F001ABA89 /* EntryDetailViewController.swift in Sources */,
 				C43638C01C64034D00DF0E4B /* Entry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
