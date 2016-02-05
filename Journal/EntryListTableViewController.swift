@@ -71,7 +71,7 @@ class EntryListTableViewController: UITableViewController {
             if let cell = sender as? UITableViewCell,
                 indexPath = tableView.indexPathForCell(cell) {
                     let entry = EntryController.sharedinstance.entries[indexPath.row]
-                        entryDetailViewController.entry = entry
+                    entryDetailViewController.entry = entry
             }
         }
     }

@@ -30,7 +30,9 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if let entry = entry {
+            updateWith(entry)
+        }
 
     }
 
@@ -45,7 +47,9 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateWith(entry: Entry) {
-        titleTextField.text = entry.title
-        bodyTextField.text = entry.bodyText
+        self.entry = entry
+        
+        self.titleTextField.text = entry.title
+        self.bodyTextField.text = entry.bodyText
     }
 }
