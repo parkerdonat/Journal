@@ -13,6 +13,9 @@ class EntryListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self, selector: "entriesUpdated:", name: EntriesUpdateNotification, object: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -20,6 +23,12 @@ class EntryListTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    
+    func entriesUpdated(notification: NSNotification) {
+        tableView.reloadData()
+    }
+    
     
     // MARK: - Table view data source
 

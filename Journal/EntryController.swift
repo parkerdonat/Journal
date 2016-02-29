@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Firebase
+
+public let EntriesUpdateNotification = "EntriesUpdateNotificationName"
 
 class EntryController {
     
@@ -14,7 +17,14 @@ class EntryController {
     
     static let sharedController = EntryController()
     
-    var entries: [Entry]
+    var entries: [Entry] {
+        didSet {
+            let nc = NSNotificationCenter.defaultCenter()
+            nc.postNotificationName(EntriesUpdateNotification, object: self)
+           
+            // NSNotificationCenter.defaultCenter().postNotificationName(EntriesUpdateNotification, object: self)
+        }
+    }
     
     init() {
         
@@ -40,19 +50,20 @@ class EntryController {
     
     func loadFromPersistentStorage() {
         
-        let entryDictionariesFromDefaults = NSUserDefaults.standardUserDefaults().objectForKey(entriesKey) as? [Dictionary<String, AnyObject>]
-
-        if let entryDictionaries = entryDictionariesFromDefaults {
-        
-            self.entries = entryDictionaries.map({Entry(dictionary: $0)!})
-        }
+        let entriesRef = FirebaseController.entryBase
+        entriesRef.observeEventType(.Value, withBlock: { (snap) in
+            print("Entries: \(snap.value)")
+            if let entryDictionaries = snap.value as? [Dictionary<String, AnyObject>] {
+                self.entries = entryDictionaries.map({Entry(dictionary: $0)!})
+            }
+        })
     }
     
     func saveToPersistentStorage() {
         
         let entryDictionaries = self.entries.map({$0.dictionaryCopy()})
-        
-        NSUserDefaults.standardUserDefaults().setObject(entryDictionaries, forKey: entriesKey)
+                
+        FirebaseController.entryBase.setValue(entryDictionaries)
     }
     
 }
