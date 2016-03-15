@@ -18,6 +18,10 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let entry = entry {
+            self.updateWithEntry(entry)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -30,7 +34,6 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     func updateWithEntry(entry: Entry) {
         
         self.entry = entry
-        
         self.titleTextField.text = entry.title
         self.bodyTextView.text = entry.text
         

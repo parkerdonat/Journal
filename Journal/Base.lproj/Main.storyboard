@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Entry List Table View Controller-->
+        <!--Journal-->
         <scene sceneID="wC6-HY-aL8">
             <objects>
                 <tableViewController id="yE2-fh-iNc" customClass="EntryListTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                             <outlet property="delegate" destination="yE2-fh-iNc" id="P5R-ki-Kq0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="M83-5T-bKC">
+                    <navigationItem key="navigationItem" title="Journal" id="M83-5T-bKC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="09y-Hu-TMe">
                             <connections>
                                 <segue destination="FeF-wS-7pR" kind="show" identifier="toAddEntry" id="f5t-zb-Cnz"/>
