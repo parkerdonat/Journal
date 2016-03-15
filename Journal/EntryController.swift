@@ -18,13 +18,14 @@ class EntryController {
         self.entries = []
     }
     
-    func addEntry(entry: Enty) {
+    func addEntry(entry: Entry) {
         
         entries.append(entry)
         
     }
     
     func removeEntry(entry: Entry) {
+        
         if let entryIndex = entries.indexOf(entry) {
             entries.removeAtIndex(entryIndex)
         }
