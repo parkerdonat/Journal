@@ -13,11 +13,7 @@ class EntryController {
     static let sharedInstance = EntryController()
     
     var entries: [Entry] = []
-    
-    init() {
-        entries = []
-    }
-    
+        
     func addEntry(entry: Entry) {
         entries.append(entry)
     }

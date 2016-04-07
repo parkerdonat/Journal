@@ -34,7 +34,6 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
         if let entry = self.entry {
