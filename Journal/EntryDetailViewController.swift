@@ -45,6 +45,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
             EntryController.sharedInstance.addEntry(newEntry)
             self.entry = newEntry
         }
+        print(NSUserDefaults.standardUserDefaults().objectForKey("entries"))
         self.navigationController?.popViewControllerAnimated(true)
     }
     
